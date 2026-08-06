@@ -1,0 +1,223 @@
+{
+	"pages": [
+	
+		{
+			"path": "pages/jogos/index",
+			"style": {
+				"navigationBarTitleText": "游戏",
+				"navigationStyle": "custom"
+			}
+		},
+
+		{
+			"path": "pages/framebox",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+
+
+		{
+			"path": "pages/convidar/index",
+			"style": {
+				"navigationBarTitleText": "邀请",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/events/index",
+			"style": {
+				"navigationBarTitleText": "活动",
+				"navigationStyle": "custom"
+			}
+
+		},
+		{
+			"path": "pages/vip/index",
+			"style": {
+				"navigationBarTitleText": "会员",
+				"navigationStyle": "custom"
+			}
+
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		}
+
+		, {
+			"path": "pages/mine/play-record/index",
+			"style": {
+				"navigationBarTitleText": "记录",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/mine/settings/index",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/mine/account/index",
+			"style": {
+				"navigationBarTitleText": "账户",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/jogos/notice/index",
+			"style": {
+				"navigationBarTitleText": "消息列表",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/jogos/about-us/index",
+			"style": {
+				"navigationBarTitleText": "关于我们",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/mine/privacy/index",
+			"style": {
+				"navigationBarTitleText": "隐私",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/events/details",
+			"style": {
+				"navigationBarTitleText": "活动详情",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/mine/savings-account/index",
+			"style": {
+				"navigationBarTitleText": "存款",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/first-storage/index",
+			"style": {
+				"navigationBarTitleText": "首存",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		},
+		{
+			"path": "pages/return-cash/index",
+			"style": {
+				"navigationBarTitleText": "充值现金返还",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/conversion/index",
+			"style": {
+				"navigationBarTitleText": "额度转换",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/telegram/index",
+			"style": {
+				"navigationBarTitleText": "电报",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/buddy/index",
+			"style": {
+				"navigationBarTitleText": "成为合作伙伴",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/jogos/game-details/index",
+			"style": {
+				"navigationBarTitleText": "游戏列表",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		},
+		{
+			"path": "pages/bind/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		
+		}
+	    ,{
+            "path" : "pages/mine/backwater/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
+    ],
+	"tabBar": {
+		"color": "#666",
+		"selectedColor": "#999",
+		"backgroundColor": "#2e3142",
+		"list": [{
+				"pagePath": "pages/jogos/index",
+				"iconPath": "static/images/tabbar/jogos.png",
+				"selectedIconPath": "static/images/tabbar/curr_jogos.png",
+				"text": "jogo"
+			},
+			{
+				"pagePath": "pages/convidar/index",
+				"iconPath": "static/images/tabbar/convidar.png",
+				"selectedIconPath": "static/images/tabbar/curr_convidar.png",
+				"text": "convidar"
+			},
+			{
+				"pagePath": "pages/events/index",
+				"iconPath": "static/images/tabbar/convidar.png",
+				"selectedIconPath": "static/images/tabbar/curr_convidar.png",
+				"text": "Atividade"
+			},
+			{
+				"pagePath": "pages/vip/index",
+				"iconPath": "static/images/tabbar/vip.png",
+				"selectedIconPath": "static/images/tabbar/curr_vip.png",
+				"text": "membro"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"iconPath": "static/images/tabbar/mine.png",
+				"selectedIconPath": "static/images/tabbar/curr_mine.png",
+				"text": "meu"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "game-app",
+		"navigationBarBackgroundColor": "#FFFFFF"
+	}
+}

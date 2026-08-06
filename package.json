@@ -1,0 +1,11 @@
+{
+  "name": "game-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "game-app",
+  "license": "MIT",
+  "dependencies": {
+    "vue-i18n": "^9.2.2"
+  }
+}
