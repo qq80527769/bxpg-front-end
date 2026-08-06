@@ -1,7 +1,7 @@
 {
-    "name" : "源码分享站ymfxz.com",
+    "name" : "PG",
     "appid" : "__UNI__D41BEE4",
-    "description" : "源码分享站ymfxz.com",
+    "description" : "PG",
     "versionName" : "1.1.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -98,8 +98,8 @@
     "h5" : {
         "template" : "static/index.html",
         "devServer" : {
-            "port" : 9090,
-            "https" : true,
+            "port" : 8080,
+            "https" : false,
             "proxy" : {
                 "/api/" : {
                     "target" : "https://server.tntgame.club/",

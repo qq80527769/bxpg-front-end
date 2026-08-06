@@ -1,8 +1,8 @@
 // 应用全局配置 源码分享站ymfxz.com
 module.exports = {
   // baseUrl: '/api/',
-  baseUrl: 'https://admin.sx680.xyz/api/',
-  baseImgUrl: 'https://admin.sx680.xyz/',
+  baseUrl: 'http://pg.com/api/',
+  baseImgUrl: 'http://pg.com/',
   // 应用信息
   appInfo: {
     // 应用名称

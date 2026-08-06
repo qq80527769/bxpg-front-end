@@ -69,9 +69,12 @@
 			<u-transition :show="showSearch" mode="slide-right">
 				<!-- showSearchList=false -->
 				<view class="show_search">
-					<u--input :placeholder="$t('jogos.fl8')" border="none" v-model="searchForm.keyword"
-						@blur="showSearch=false; showSearchList=false; searchForm.keyword = ''"
-						:customStyle="{'background': '#292e3d', height: '80rpx', padding: '0 20rpx', border: '1px solid #666'}"></u--input>
+					<u--input :placeholder="$t('jogos.fl8')" border="none" v-model="searchForm.keyword" @blur="handleBlur()"
+						:customStyle="{'background': '#292e3d', height: '80rpx', padding: '0 20rpx', border: '1px solid #666'}">
+						<template #suffix>
+							<u-button type="primary" size="mini" @click="handleSearch">procurar</u-button>
+						</template>
+					</u--input>
 				</view>
 			</u-transition>
 
@@ -93,14 +96,14 @@
 					</view>
 				</view> -->
 				<scroll-view scroll-y="true" class="search_list" @scrolltolower="searchScrolltolower">
-					<view class="search_list_item" v-for="item in searchGameList" :key="item.id">
-						<u--image radius="10rpx" :src="item.imageUrl" width="220rpx" height="150rpx">
+					<view class="search_list_item" v-for="item in searchGameList" :key="item.id" @tap="enterGameBtn(item)">
+						<u--image radius="10rpx" :src="$config.baseImgUrl+item.imageUrl" width="220rpx" height="150rpx">
 							<template v-slot:loading>
 								<u-loading-icon color="#666"></u-loading-icon>
 							</template>
 						</u--image>
 						<view class="text d_ellipsis">
-							 {{item.gameName}}
+							{{item.gameName}}
 						</view>
 					</view>
 
@@ -111,7 +114,6 @@
 					</u-empty>
 				</scroll-view>
 			</u-transition>
-
 		</view>
 
 		<view class="d_j_list d_bgColor d_border12" v-for="(key,value) in gameList" :key="value">
@@ -133,7 +135,7 @@
 			</view>
 			<view class="d_jl_list d_flex">
 				<view class="d_jl_list_item" v-for="item in key" :key="item.id" @tap="enterGameBtn(item)">
-					<u--image radius="10rpx" :src="item.imageUrl" width="220rpx" height="150rpx">
+					<u--image radius="10rpx" :src="$config.baseImgUrl+item.imageUrl" width="220rpx" height="150rpx">
 						<template v-slot:loading>
 							<u-loading-icon color="#666"></u-loading-icon>
 						</template>
@@ -691,6 +693,8 @@
 					return this.$store.dispatch('LoginPopup', true)
 
 				}
+
+				uni.showLoading()
 				const form = {
 					ispc: "device1",
 					back: "/",
@@ -706,6 +710,7 @@
 				if (code == 200) {
 					window.location.href = data
 				}
+				uni.hideLoading()
 			},
 
 			// 找回密码
@@ -853,8 +858,27 @@
 				}
 				this.searchForm.page += 1
 				this.getFuzzyQueryGame()
-			}
+			},
+			// 点击搜索
+			handleSearch() {
+				this.searchGameList = []
+				this.total = 0
+				this.searchForm.page = 1
+				this.searchForm.list = 10
 
+				if (this.searchForm.keyword) {
+					this.getFuzzyQueryGame()
+				}
+			},
+			handleBlur() {
+				// 延迟关闭，避免点击搜索按钮时冲突
+				setTimeout(() => {
+					// this.showSearch = false;
+					// // this.showSearch=false;
+					// // this.showSearchList=false;
+					// this.searchForm.keyword = ''
+				}, 200);
+			},
 		},
 		watch: {
 			loginNavIndex(index) {
@@ -881,16 +905,11 @@
 			},
 
 			'searchForm.keyword'() {
-				this.searchGameList = []
-				this.total = 0
-				this.searchForm.page = 1
-				this.searchForm.list = 10
-
-				if (this.searchForm.keyword) {
-					this.getFuzzyQueryGame()
+				if (this.searchForm.keyword == '') {
+					this.showSearch=false;
+					this.showSearchList=false;
 				}
 			}
-
 		},
 		onHide() {
 			this.showFlPopup = false

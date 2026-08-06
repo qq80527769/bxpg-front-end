@@ -6,7 +6,7 @@
 
 		<view class="game_list d_flex">
 			<view class="d_jl_list_item" v-for="item in gameList" :key="item.id" @tap="enterGameBtn(item)">
-				<u--image radius="10rpx" :src="item.imageUrl" width="220rpx" height="150rpx">
+				<u--image radius="10rpx" :src="$config.baseImgUrl+item.imageUrl" width="220rpx" height="150rpx">
 					<template v-slot:loading>
 						<u-loading-icon color="#666"></u-loading-icon>
 					</template>
@@ -62,6 +62,7 @@
 				if (!this.$isLogin()) {
 					return false
 				}
+				uni.showLoading()
 				const form = {
 					ispc: "device1",
 					back: "/",
@@ -77,6 +78,7 @@
 				if (code == 200) {
 					window.location.href = data
 				}
+				uni.hideLoading()
 			},
 		}
 	}
@@ -89,12 +91,14 @@
 		.game_list {
 			padding-top: 20rpx;
 			flex-wrap: wrap;
-			justify-content: space-between;
 
 			.d_jl_list_item {
 				margin-bottom: 20rpx;
-				width: 220rpx;
-
+				width: calc(100% / 3);
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
 				.text {
 					margin: 10rpx;
 					color: #838ca0;
