@@ -80,7 +80,7 @@
 
 
 		</view>
-
+		<!--搜索列表-->
 		<view class="d_j_search_list d_bgColor d_border12">
 			<u-transition :show="showSearchList" mode="slide-right">
 				<!-- 	<view class="search_list">
@@ -502,32 +502,22 @@
 					},
 				],
 				value: '',
-				gameNavList: [{
-						name: 'Salao',
-						url: require('@/static/images/jogos/youxi0.png'),
+				gameNavList: [
+					{
+						name: 'PG slots',
+						url: require('@/static/images/jogos/pg.png'),
 						status: 1
 					},
 					{
-						name: 'Slots',
-						url: require('@/static/images/jogos/youxi1.png'),
+						name: 'PP slots',
+						url: require('@/static/images/jogos/pp.png'),
 						status: 2
 					},
 					{
-						name: 'Vivo',
-						url: require('@/static/images/jogos/youxi2.png'),
+						name: 'WG',
+						url: require('@/static/images/jogos/wg.png'),
 						status: 3
 					},
-					// {
-					// 	name: 'Fishing',
-					// 	url: require('@/static/images/jogos/youxi4.png'),
-					// 	status: 4
-					// },
-					{
-						name: 'Live',
-						url: require('@/static/images/jogos/youxi3.png'),
-						status: 5
-					},
-
 				],
 				gameList: [],
 
@@ -1102,11 +1092,14 @@
 			.d_jl_list {
 				padding-top: 20rpx;
 				flex-wrap: wrap;
-				justify-content: space-between;
 
 				.d_jl_list_item {
 					margin-bottom: 20rpx;
-					width: 220rpx;
+					width: calc(100% / 3);
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
 
 					.text {
 						margin: 10rpx;
