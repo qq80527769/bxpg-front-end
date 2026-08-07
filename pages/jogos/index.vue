@@ -44,7 +44,7 @@
 			<u-swiper :list="bannerList" previousMargin="30" nextMargin="30" circular height="300rpx" bgColor="#2f3141"
 				keyName="image"></u-swiper>
 		</view>
-		<view class="d_j_nav d_flex d_bgColor">
+		<view class="d_j_nav d_flex d_bgColor" style="display: none">
 			<u-transition :show="!showSearch" mode="slide-left">
 				<view v-for="item in gameNavList"
 					:class="[item.status == navItemStatus ? 'cu_d_j_n_item' : '', 'd_j_n_item', 'd_flex']"
@@ -80,6 +80,16 @@
 
 
 		</view>
+		<!--搜索框-->
+		<view class="d_j_nav d_flex d_bgColor">
+			<view class="show_search">
+				<u--input :placeholder="$t('jogos.fl8')" border="none" v-model="searchForm.keyword" @blur="handleBlur()" :customStyle="{'background': '#292e3d', height: '80rpx', padding: '0 20rpx', border: '1px solid #666'}">
+					<template #suffix>
+						<u-button type="primary" size="mini" @click="handleSearch">procurar</u-button>
+					</template>
+				</u--input>
+			</view>
+		</view>
 		<!--搜索列表-->
 		<view class="d_j_search_list d_bgColor d_border12">
 			<u-transition :show="showSearchList" mode="slide-right">
@@ -107,11 +117,8 @@
 						</view>
 					</view>
 
-					<u-loadmore :loadmoreText="$t('global.title2')" :loadingText="$t('global.title3')"
-						:nomoreText="$t('global.title4')" :status="status" v-if="total > 0" />
 
-					<u-empty :show="total == 0" style="margin: 0 auto;" :text="$t('global.title1')">
-					</u-empty>
+					<u-empty :show="total == 0" style="margin: 0 auto;" :text="$t('global.title1')"> </u-empty>
 				</scroll-view>
 			</u-transition>
 		</view>
