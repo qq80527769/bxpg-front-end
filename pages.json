@@ -4,7 +4,7 @@
 		{
 			"path": "pages/jogos/index",
 			"style": {
-				"navigationBarTitleText": "游戏",
+				"navigationBarTitleText": "PG",
 				"navigationStyle": "custom"
 			}
 		},
@@ -20,14 +20,14 @@
 		{
 			"path": "pages/convidar/index",
 			"style": {
-				"navigationBarTitleText": "邀请",
+				"navigationBarTitleText": "Convidar",
 				"navigationStyle": "custom"
 			}
 
 		}, {
 			"path": "pages/events/index",
 			"style": {
-				"navigationBarTitleText": "活动",
+				"navigationBarTitleText": "Eventos",
 				"navigationStyle": "custom"
 			}
 
@@ -35,7 +35,7 @@
 		{
 			"path": "pages/vip/index",
 			"style": {
-				"navigationBarTitleText": "会员",
+				"navigationBarTitleText": "Membros",
 				"navigationStyle": "custom"
 			}
 
@@ -43,7 +43,7 @@
 		{
 			"path": "pages/mine/index",
 			"style": {
-				"navigationBarTitleText": "我的",
+				"navigationBarTitleText": "Eu",
 				"navigationStyle": "custom"
 			}
 		}
@@ -51,21 +51,21 @@
 		, {
 			"path": "pages/mine/play-record/index",
 			"style": {
-				"navigationBarTitleText": "记录",
+				"navigationBarTitleText": "Registros",
 				"navigationStyle": "custom"
 			}
 
 		}, {
 			"path": "pages/mine/settings/index",
 			"style": {
-				"navigationBarTitleText": "设置",
+				"navigationBarTitleText": "Configurações",
 				"navigationStyle": "custom"
 			}
 
 		}, {
 			"path": "pages/mine/account/index",
 			"style": {
-				"navigationBarTitleText": "账户",
+				"navigationBarTitleText": "Conta",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -73,14 +73,14 @@
 		}, {
 			"path": "pages/jogos/notice/index",
 			"style": {
-				"navigationBarTitleText": "消息列表",
+				"navigationBarTitleText": "Lista de Mensagens",
 				"navigationStyle": "custom"
 			}
 
 		}, {
 			"path": "pages/jogos/about-us/index",
 			"style": {
-				"navigationBarTitleText": "关于我们",
+				"navigationBarTitleText": "Sobre Nós",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -88,7 +88,7 @@
 		}, {
 			"path": "pages/mine/privacy/index",
 			"style": {
-				"navigationBarTitleText": "隐私",
+				"navigationBarTitleText": "Privacidade",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -96,7 +96,7 @@
 		}, {
 			"path": "pages/events/details",
 			"style": {
-				"navigationBarTitleText": "活动详情",
+				"navigationBarTitleText": "Detalhes do Evento",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -104,7 +104,7 @@
 		}, {
 			"path": "pages/mine/savings-account/index",
 			"style": {
-				"navigationBarTitleText": "存款",
+				"navigationBarTitleText": "Depósito",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -112,7 +112,7 @@
 		}, {
 			"path": "pages/first-storage/index",
 			"style": {
-				"navigationBarTitleText": "首存",
+				"navigationBarTitleText": "Primeiro Depósito",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -121,7 +121,7 @@
 		{
 			"path": "pages/return-cash/index",
 			"style": {
-				"navigationBarTitleText": "充值现金返还",
+				"navigationBarTitleText": "Cashback na Recarga",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -129,7 +129,7 @@
 		}, {
 			"path": "pages/conversion/index",
 			"style": {
-				"navigationBarTitleText": "额度转换",
+				"navigationBarTitleText": "Transferência de Fundos",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -137,7 +137,7 @@
 		}, {
 			"path": "pages/telegram/index",
 			"style": {
-				"navigationBarTitleText": "电报",
+				"navigationBarTitleText": "Telegram",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -145,7 +145,7 @@
 		}, {
 			"path": "pages/buddy/index",
 			"style": {
-				"navigationBarTitleText": "成为合作伙伴",
+				"navigationBarTitleText": "Torne-se Parceiro",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
@@ -153,7 +153,7 @@
 		}, {
 			"path": "pages/jogos/game-details/index",
 			"style": {
-				"navigationBarTitleText": "游戏列表",
+				"navigationBarTitleText": "Lista de Jogos",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
