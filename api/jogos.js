@@ -16,6 +16,22 @@ export function notice() {
 	})
 }
 
+// 公告
+export function popup() {
+	return request({
+		url: 'index/getPopupImg',
+		method: 'POST'
+	})
+}
+
+// 公告
+export function receiveBonus() {
+	return request({
+		url: 'index/receiveBonus',
+		method: 'POST'
+	})
+}
+
 // 游戏列表
 export function gameList(data) {
 	return request({

@@ -459,6 +459,17 @@
 			</view>
 		</u-popup>
 
+		<u-popup :show="showBonusPopup" mode="center" @close=" loginNavIndex=0" :round="10">
+			<view class="d_bonus_popup d_bgColor d_border12">
+				<u--image radius="10rpx" :src="$config.baseImgUrl+bonusPopupImg" width="510rpx" height="682rpx" @click="getReceiveBonus">
+					<template v-slot:loading>
+						<u-loading-icon color="#666"></u-loading-icon>
+					</template>
+				</u--image>
+				<u-icon class="off_icon" name="close-circle" color="#fff" size="48rpx" @tap="showBonusPopup=false; loginNavIndex=0"></u-icon>
+			</view>
+		</u-popup>
+
 
 		<u-picker :cancelText="$t('popUp.text2')" :confirmText="$t('popUp.text3')" :show="showLanguage"
 			:columns="columns" closeOnClickOverlay @close="showLanguage=false" @cancel="showLanguage=false"
@@ -472,6 +483,8 @@
 		gameList,
 		enterGame,
 		notice,
+		popup,
+		receiveBonus,
 		downloadAddress,
 		fuzzyQueryGame
 	} from '@/api/jogos.js'
@@ -561,10 +574,14 @@
 				total: undefined,
 				status: 'loadmore',
 				searchGameList: [],
+
+				showBonusPopup:false,// 显示彩金领取弹窗
+				bonusPopupImg:'',// 显示彩金领取弹窗图片
 			}
 		},
 		onShow() {
 			// this.getNoticeDot()
+			this.getPopup()
 		},
 		onLoad() {
 			this.getBanner()
@@ -658,6 +675,7 @@
 				this.$modal.msg(this.$t('popUp.text14'))
 				this.$store.dispatch('LoginPopup', false)
 				this.$store.dispatch('GetInfo')
+				this.getPopup()
 			},
 
 			// 注册
@@ -688,7 +706,6 @@
 			async enterGameBtn(row) {
 				if (!this.$isLogin()) {
 					return this.$store.dispatch('LoginPopup', true)
-
 				}
 
 				uni.showLoading()
@@ -813,6 +830,42 @@
 				} = await notice()
 				if (code == 200) {
 					this.showNoticeDot = data
+				}
+			},
+			// 获取弹窗图片
+			async getPopup() {
+				let {
+					code,
+					data
+				} = await popup()
+				if (code == 200) {
+					if (data.is_bonus === 0){
+						this.$store.dispatch('LoginPopup', false)
+						this.showBonusPopup = !data.is_bonus
+						this.bonusPopupImg = data.img
+					}
+				}
+			},
+			// 领取彩金
+			async getReceiveBonus() {
+				if (!this.$isLogin()) {
+					this.showBonusPopup = false
+					return this.$store.dispatch('LoginPopup', true)
+				}
+				uni.showLoading()
+				let {
+					code,
+					data,
+					msg
+				} = await receiveBonus()
+
+				if (code == 200) {
+					this.showBonusPopup = false
+					uni.hideLoading()
+					uni.showToast({
+						icon: 'none',
+						title: msg
+					})
 				}
 			},
 
@@ -1273,6 +1326,15 @@
 			border-radius: 50%;
 		}
 
+		.d_bonus_popup {
+			color: #fff;
+
+			.off_icon {
+				position: absolute;
+				bottom: -80rpx;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
 	}
 </style>
-<!-- 源码分享站ymfxz.com -->
