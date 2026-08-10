@@ -1,6 +1,7 @@
 // 应用全局配置 源码分享站ymfxz.com
 module.exports = {
   // baseUrl: '/api/',
+  // baseImgUrl: '',
   baseUrl: 'http://pg.com/api/',
   baseImgUrl: 'http://pg.com/',
   // 应用信息
