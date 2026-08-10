@@ -409,10 +409,11 @@
 							</template>
 						</u--input>
 
-						<u--input :placeholder="$t('popUp.text13')" border="none" v-model="loginForm.invitation_code"
-							shape="circle" color="#fff"
-							:customStyle="{'background': '#292e3d', height: '80rpx', padding: '0 20rpx', border: '1px solid #666', marginTop: '20rpx'}">
-						</u--input>
+						<!-- <u&#45;&#45;input :placeholder="$t('popUp.text13')" border="none" v-model="loginForm.invitation_code" -->
+						<!-- 	shape="circle" color="#fff" -->
+						<!-- 	:customStyle="{'background': '#292e3d', height: '80rpx', padding: '0 20rpx', border: '1px solid #666', marginTop: '20rpx'}" -->
+						<!-- > -->
+						<!-- </u&#45;&#45;input> -->
 
 						<view style="height: 60rpx">
 
@@ -546,7 +547,7 @@
 					password: '',
 					username: '',
 					codes: '',
-					invitation_code: '',
+					// invitation_code: '',
 					newPassword: ''
 				},
 				LoginName: this.$t('popUp.text7'),
@@ -591,7 +592,7 @@
 				this.loginNavIndex = 1
 				this.logins = true
 				this.$store.dispatch('LoginPopup', true)
-				this.loginForm.invitation_code = this.getUrlParam('pid')
+				// this.loginForm.invitation_code = this.getUrlParam('pid')
 
 				console.log(this.loginForm)
 			}
@@ -685,14 +686,14 @@
 					username,
 					password,
 					// codes,
-					invitation_code
+					// invitation_code
 				} = this.loginForm
 				console.log(this.loginForm)
 				const data = await register({
 					username,
 					password,
 					// codes,
-					invitation_code
+					// invitation_code
 				})
 				if (data.code == 200) {
 					this.$modal.msg(this.$t('popUp.text17'))
