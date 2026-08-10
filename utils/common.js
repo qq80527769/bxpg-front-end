@@ -1,5 +1,5 @@
 import store from '@/store/index.js'
-
+import i18n from '@/lang/index.js'
 /**
 * 显示消息提示框
 * @param content 提示的标题
@@ -16,12 +16,12 @@ export function toast(content) {
 * @param content 提示的标题
 */
 export function showConfirm(content) {
+  console.log(i18n)
   return new Promise((resolve, reject) => {
     uni.showModal({
-      title: '天美社区提示',
       content: content,
-      cancelText: '取消',
-      confirmText: '确定',
+      cancelText: i18n.t('popUp.text2'),
+      confirmText: i18n.t('popUp.text3'),
       success: function(res) {
         resolve(res)
       }

@@ -159,7 +159,7 @@
 		<view class="d_j_footer d_bgColor">
 			<view class="foo_one d_flex">
 				<u--image
-					src="../../static/images/logo.png" 
+					src="../../static/images/logo.png"
 					width="500rpx"
 					height="100rpx">
 					<template v-slot:loading>
@@ -168,7 +168,7 @@
 					</u--image>
 			</view>
 			<view class="foo_tow">
-				© 2024 源码分享站ymfxz.com {{$t('jogos.fooCopyright')}} 
+				© 2024 源码分享站ymfxz.com {{$t('jogos.fooCopyright')}}
 			</view>
 			<view class="foo_three d_flex">
 				<u--image :showLoading="true" src="../../static/images/jogos/foo1.png" width="70rpx"
@@ -329,7 +329,7 @@
 								<u-icon name="eye" color="#999" size="38rpx"></u-icon>
 							</template>
 						</u--input>
-						<!-- 
+						<!--
 						<view class="fr_four" @tap="loginNavIndex = 2">
 						{{$t('popUp.text9')}}
 						</view> -->
@@ -592,7 +592,7 @@
 				this.logins = true
 				this.$store.dispatch('LoginPopup', true)
 				this.loginForm.invitation_code = this.getUrlParam('pid')
-				
+
 				console.log(this.loginForm)
 			}
 		},
@@ -762,9 +762,9 @@
 				this.logins = logins
 			},
 
-			// 如果检测有pid 打开注册弹窗 
+			// 如果检测有pid 打开注册弹窗
 			getUrlParam(param) {
-				// let urlObj = new URL(url); 
+				// let urlObj = new URL(url);
 				// return urlObj.searchParams.get(param);
 				const options = uni.getLaunchOptionsSync();
 				if (options.query && options.query[param]) {
